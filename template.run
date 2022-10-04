@@ -6,7 +6,7 @@
 #SBATCH --mem 64G
 #SBATCH --partition gpu
 #SBATCH --gres gpu:1
-#SBATCH --time 12:00:00
+#SBATCH --time 00:05:00
 #SBATCH --qos gpu_free
 
 echo STARTING AT `date`

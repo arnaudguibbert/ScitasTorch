@@ -1,4 +1,4 @@
-import logging
+import logging.config
 import yaml
 import os
 from datetime import datetime
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     trainer = TrainModel(model,
                          optimizer,
                          criterion=nn.CrossEntropyLoss(),
-                         train_data=loader)
+                         train_data=loader,**config["train"])
 
     limit_reached = trainer.train()
 

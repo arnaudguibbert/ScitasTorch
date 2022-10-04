@@ -5,6 +5,11 @@ model:
 
 train:
   epochs: 10
+  time_limit: 1000
+
+data:
+  dataset_name: MNIST
+  root: datasets
 
 optimizer:
   lr: 0.1

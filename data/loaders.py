@@ -8,7 +8,8 @@ def SetDataLoader(dataset_name:str,
                   batch_size=32,**kwargs) -> DataLoader:
     
     if dataset_name == "MNIST":
-        dataset = torchvision.datasets.MNIST(root,**kwargs)
+        dataset = torchvision.datasets.MNIST(root,
+                                             transform=torchvision.transforms.ToTensor(),**kwargs)
     else:
         logging.warn("Dataset requested not available : %s",dataset_name)
         return None

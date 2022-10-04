@@ -1,0 +1,33 @@
+launcher_file: "template.run"
+
+model: 
+  C_in: 10
+
+train:
+  epochs: 10
+
+optimizer:
+  lr: 0.1
+
+checkpoint: null
+
+
+logger:
+  version: 1
+  formatters:
+    simple:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO
+      formatter: simple
+      stream: ext://sys.stdout
+  loggers:
+    models.train:
+      level: INFO
+      handlers: [console]
+      propagate: no
+  root:
+    level: INFO
+    handlers: [console]
